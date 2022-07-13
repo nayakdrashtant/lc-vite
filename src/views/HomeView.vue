@@ -2,15 +2,14 @@
 import {onMounted, ref} from "vue";
 import TabbableTextarea from "@/components/TabbableTextarea.vue"
 let comment = ref('test value');
+import {state} from "@/stores/quizStore";
 </script>
 
 <template>
   <main>
-    <form action="">
-      <TabbableTextarea
-          style="width: 100%;height: 300px"
-          v-model="comment"
-      ></TabbableTextarea>
-    </form>
+    <h2>
+      {{state.name}}
+    </h2>
+    <button @click="state.name = 'A new quiz name'">Change quiz name</button>
   </main>
 </template>
